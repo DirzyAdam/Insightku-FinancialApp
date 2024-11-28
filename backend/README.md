@@ -20,5 +20,45 @@
 ### 1. Clone repository:
 Clone repository ini ke mesin lokal Anda:
 ```bash
-git clone https://github.com/username/insightku-backend.git
-cd insightku-backend
+git clone https://github.com/DirzyAdam/Insightku-FinancialApp.git
+cd Insightku-FinancialApp/backend
+```
+
+```bash
+npm run start
+```
+
+### Tes Endpoint 
+- **sign up (post)** : http://localhost:5000/api/users/signup
+```
+{
+  "username": "newUser",
+  "email": "newuser@example.com",
+  "password": "securePassword123"
+}
+```
+- **login (post)** : http://localhost:5000/api/users/login
+```
+{
+  "email": "newuser@example.com",
+  "password": "securePassword123"
+}
+```
+```
+{
+  "message": "Login successful",
+  "token": "your_jwt_token_here"
+}
+```
+- **akses data (get)** : http://localhost:5000/api/users/me
+Pada tab Headers, tambahkan header berikut:
+- Key: Authorization
+- Value: Bearer your_jwt_token_here (ganti dengan token yang Anda dapatkan dari login).
+- kalo valid, respons :
+```
+{
+  "userId": 0,
+  "username": "newUser",
+  "email": "newuser@example.com"
+}
+```
