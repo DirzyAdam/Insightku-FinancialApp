@@ -45,7 +45,7 @@ def load_forecasting_model():
     
 def prepare_new_data(input_data, model_components):
     try:
-        required_columns = ['Date', 'Mode', 'Category', 'Subcategory', 'Amount', 'Note', 'Currency']
+        required_columns = ['Date']
         missing_cols = [col for col in required_columns if col not in input_data.columns]
         if missing_cols:
             raise ValueError(f"Input data is missing the following columns: {missing_cols}")
