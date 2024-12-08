@@ -174,5 +174,9 @@ def health_check():
     except Exception as e:
         return jsonify({'status': 'unhealthy', 'message': str(e)}), 500
 
+@app.route('/')
+def home():
+    return "Selamat datang di Aplikasi Prediksi Pengeluaran"
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
