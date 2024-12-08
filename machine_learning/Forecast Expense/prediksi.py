@@ -7,10 +7,10 @@ from datetime import datetime
 data = [
     {
         "Date": "2024-03-01",
-        "Mode": "afk",
+        "Mode": "Cash",
         "Category": "Food",
         "Subcategory": "Afuy",
-        "Amount": 500,
+        "Amount": 50000,
         "Note": "Cihuy",
         'Expense': 1,
         "Currency": "IDR"
@@ -20,7 +20,7 @@ data = [
         "Mode": "Cash",
         "Category": "Food",
         "Subcategory": "Dinner",
-        "Amount": 750,
+        "Amount": 75000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -30,7 +30,7 @@ data = [
         "Mode": "Cash",
         "Category": "Transportation",
         "Subcategory": "Taxi",
-        "Amount": 3500,
+        "Amount": 35000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -40,7 +40,7 @@ data = [
         "Mode": "Cash",
         "Category": "Food",
         "Subcategory": "Lunch",
-        "Amount": 400,
+        "Amount": 40000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -50,7 +50,7 @@ data = [
         "Mode": "Cash",
         "Category": "Utilities",
         "Subcategory": "Lunch",
-        "Amount": 200,
+        "Amount": 20000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -60,7 +60,7 @@ data = [
         "Mode": "Cash",
         "Category": "Food",
         "Subcategory": "Lunch",
-        "Amount": 5500,
+        "Amount": 55000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -70,7 +70,7 @@ data = [
         "Mode": "Cash",
         "Category": "Entertainment",
         "Subcategory": "Lunch",
-        "Amount": 1000,
+        "Amount": 100000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -80,7 +80,7 @@ data = [
         "Mode": "Cash",
         "Category": "Food",
         "Subcategory": "Dinner",
-        "Amount": 800,
+        "Amount": 80000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -90,7 +90,7 @@ data = [
         "Mode": "Cash",
         "Category": "Transportation",
         "Subcategory": "Lunch",
-        "Amount": 15,
+        "Amount": 150000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -100,7 +100,7 @@ data = [
         "Mode": "Cash",
         "Category": "Food",
         "Subcategory": "Lunch",
-        "Amount": 450,
+        "Amount": 45000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -110,7 +110,7 @@ data = [
         "Mode": "Cash",
         "Category": "Shopping",
         "Subcategory": "Lunch",
-        "Amount": 3000,
+        "Amount": 30000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -120,7 +120,7 @@ data = [
         "Mode": "Cash",
         "Category": "Food",
         "Subcategory": "Dinner",
-        "Amount": 7000,
+        "Amount": 70000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -130,7 +130,7 @@ data = [
         "Mode": "Cash",
         "Category": "Utilities",
         "Subcategory": "Lunch",
-        "Amount": 2500,
+        "Amount": 25000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -140,7 +140,7 @@ data = [
         "Mode": "Cash",
         "Category": "Food",
         "Subcategory": "Lunch",
-        "Amount": 6000,
+        "Amount": 60000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -150,7 +150,7 @@ data = [
         "Mode": "Cash",
         "Category": "Food",
         "Subcategory": "Dinner",
-        "Amount": 1200,
+        "Amount": 120000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
@@ -160,7 +160,7 @@ data = [
         "Mode": "Cash",
         "Category": "Food",
         "Subcategory": "Lunch",
-        "Amount": 1500,
+        "Amount": 150000,
         "Note": "",
         'Expense': 1,
         "Currency": "IDR"
