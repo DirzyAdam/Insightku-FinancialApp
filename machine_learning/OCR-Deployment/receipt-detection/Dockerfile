@@ -7,10 +7,10 @@ RUN apt-get update && \
                         libglib2.0-0 
 
 # Copy the SavedModel
-COPY model/saved_model /models/receiptDetection_model
+COPY model/saved_model/1 /models/receiptDetection_model/1
 
 # Copy model configuration
-COPY model_config.conf /models/ 
+COPY model_config.conf /models/model
 
 # Expose port for TensorFlow Serving
 EXPOSE 8501
