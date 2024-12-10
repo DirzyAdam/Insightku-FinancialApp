@@ -1,13 +1,16 @@
-# Use the TensorFlow Serving base image; Replace with the appropriate version if needed
-FROM tensorflow/serving:2.11.0
+# Use the TensorFlow Serving base image
+FROM tensorflow/serving:2.11.0  
 
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y libgl1-mesa-glx \
                         libglib2.0-0 
 
-# Copy the SavedModel; Adjust the path if different
+# Copy the SavedModel
 COPY model/saved_model /models/receiptDetection_model
+
+# Copy model configuration
+COPY model_config.conf /models/ 
 
 # Expose port for TensorFlow Serving
 EXPOSE 8501
