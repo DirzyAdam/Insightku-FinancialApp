@@ -10,7 +10,7 @@ RUN apt-get update && \
 COPY model/saved_model/1 /models/receiptDetection_model/1
 
 # Copy model configuration
-COPY model_config.conf /models/model
+COPY model_config.conf /models/model_config.conf
 
 # Expose port for TensorFlow Serving
 EXPOSE 8501
