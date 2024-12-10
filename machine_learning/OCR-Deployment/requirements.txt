@@ -1,4 +1,5 @@
-opencv-python
+scikit-build
+opencv-contrib-python
 pytesseract
 flask
 mysql-connector-python

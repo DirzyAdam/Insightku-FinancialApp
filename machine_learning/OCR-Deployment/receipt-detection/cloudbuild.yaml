@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/insightku-project-443512/receipt-detection:latest', '.']
+images:
+- 'gcr.io/insightku-project-443512/receipt-detection:latest'
