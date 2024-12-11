@@ -21,12 +21,12 @@ def save_to_database(result, image_name):
     try:
         sql = """
         INSERT INTO prediction_results 
-        (image_name, extracted_text, total_price, amount_paid, change) 
+        (image_name, extracted_text, total_price, amount_paid, change_amount) 
         VALUES (%s, %s, %s, %s, %s)
         """
         val = (
             image_name, result.get('extracted_text'), 
-            result.get('total_price'), result.get('amount_paid'), result.get('change')
+            result.get('total_price'), result.get('amount_paid'), result.get('change_amount')
         )
         cursor.execute(sql, val)
         mydb.commit()
