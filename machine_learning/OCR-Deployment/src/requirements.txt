@@ -5,3 +5,4 @@ mysql-connector-python
 tensorflow
 tensorflow-serving-api
 scikit-image
+numpy

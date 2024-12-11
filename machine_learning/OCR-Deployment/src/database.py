@@ -19,8 +19,15 @@ def save_to_database(result, image_name):
         image_name: The name of the image file.
     """
     try:
-        sql = "INSERT INTO prediction_results (image_name, extracted_text, total_price, amount_paid, change) VALUES (%s, %s, %s, %s, %s)"
-        val = (image_name, result.get('extracted_text'), result.get('total_price'), result.get('amount_paid'), result.get('change'))
+        sql = """
+        INSERT INTO prediction_results 
+        (image_name, extracted_text, total_price, amount_paid, change) 
+        VALUES (%s, %s, %s, %s, %s)
+        """
+        val = (
+            image_name, result.get('extracted_text'), 
+            result.get('total_price'), result.get('amount_paid'), result.get('change')
+        )
         cursor.execute(sql, val)
         mydb.commit()
         print(f"Data saved to database for image: {image_name}")

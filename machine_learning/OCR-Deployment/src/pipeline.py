@@ -6,16 +6,6 @@ from postprocessing import extract_information
 def process_image(image_file):
     """
     Processes an image through the OCR pipeline.
-
-    Performs preprocessing, object detection, OCR, and post-processing
-    on the given image file.
-
-    Args:
-        image_file: The image file to be processed.
-
-    Returns:
-        A dictionary containing the extracted text and other information,
-        or None if an error occurs.
     """
     try:
         # Preprocessing
@@ -23,6 +13,9 @@ def process_image(image_file):
 
         # Object Detection
         detection_results = detect_objects(preprocessed_image)
+        
+        if detection_results is None:
+            raise ValueError("Object detection failed")
 
         # OCR
         extracted_text = perform_ocr(preprocessed_image, detection_results)
