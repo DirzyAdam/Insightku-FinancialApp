@@ -60,9 +60,11 @@ pip install requirements.txt
 ```
 
 #### Test on Local Computer
+1. Run the Flask app
 ```
 py app.py
 ```
+2. Run the pipeline
 ```
 py pipeline.py
 ```
