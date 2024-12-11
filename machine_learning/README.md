@@ -61,4 +61,5 @@ pip install requirements.txt
 
 ## Acknowledgments
 The project utilizes TensorFlow for deep learning.
+
 Special thanks to all contributors and the open-source community for their support.
