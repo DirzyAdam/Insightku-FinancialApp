@@ -59,6 +59,14 @@ pip install requirements.txt
 # image_path = "change/to/your/image/path/"
 ```
 
+#### Test on Local Computer
+```
+py app.py
+```
+```
+py pipeline.py
+```
+
 ## Acknowledgments
 The project utilizes TensorFlow for deep learning.
 
