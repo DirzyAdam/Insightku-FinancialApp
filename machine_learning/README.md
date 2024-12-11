@@ -1,6 +1,6 @@
 # Insightku Model - Machine Learning
 
-1. Clone the repository
+Clone the repository
 ```
 git clone https://github.com/DirzyAdam/Insightku-FinancialApp.git
 ```
@@ -17,7 +17,7 @@ The Forecast Expense project leverages machine learning techniques to predict mo
 4. Real-time Updates: Model updates in real-time to reflect changing financial trends.
 
 ### How to Use
-1. Install dependencies
+Install dependencies
 ```
 cd Insightku-FinancialApp/machine_learning/Forecast Expense/
 pip install requirements.txt
@@ -45,7 +45,7 @@ This project combines Object Detection and Optical Character Recognition (OCR) t
 4. Integration: Combines object detection and OCR for seamless receipt processing
 
 ### How to Use
-1. Install dependencies
+Install dependencies
 ```
 cd Insightku-FinancialApp/machine_learning/OCR/
 # Ensure you already installed pytesseract
@@ -59,6 +59,17 @@ pip install requirements.txt
 # image_path = "change/to/your/image/path/"
 ```
 
+#### Test on Local Computer
+1. Run the Flask app
+```
+py app.py
+```
+2. Run the pipeline
+```
+py pipeline.py
+```
+
 ## Acknowledgments
 The project utilizes TensorFlow for deep learning.
+
 Special thanks to all contributors and the open-source community for their support.
