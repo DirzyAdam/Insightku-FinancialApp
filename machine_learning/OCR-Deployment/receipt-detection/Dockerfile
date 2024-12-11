@@ -1,5 +1,5 @@
 # Use the TensorFlow Serving base image
-FROM tensorflow/serving:2.15.0
+FROM tensorflow/serving
 
 # Install dependencies
 RUN apt-get update && \
