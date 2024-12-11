@@ -17,7 +17,7 @@ The Forecast Expense project leverages machine learning techniques to predict mo
 4. Real-time Updates: Model updates in real-time to reflect changing financial trends.
 
 ### How to Use
-1. Install dependencies
+Install dependencies
 ```
 cd Insightku-FinancialApp/machine_learning/Forecast Expense/
 pip install requirements.txt
@@ -45,7 +45,7 @@ This project combines Object Detection and Optical Character Recognition (OCR) t
 4. Integration: Combines object detection and OCR for seamless receipt processing
 
 ### How to Use
-1. Install dependencies
+Install dependencies
 ```
 cd Insightku-FinancialApp/machine_learning/OCR/
 # Ensure you already installed pytesseract
