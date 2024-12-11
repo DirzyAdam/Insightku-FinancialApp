@@ -1,6 +1,0 @@
-scikit-build
-opencv-contrib-python
-pytesseract
-flask
-mysql-connector-python
-tensorflow-object-detection-api
