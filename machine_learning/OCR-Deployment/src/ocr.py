@@ -3,11 +3,9 @@ import pytesseract
 def perform_ocr(image, detection_results):
     """
     Performs OCR on the detected objects in the image.
-
     Args:
         image: The image to perform OCR on.
         detection_results: The object detection results containing bounding boxes.
-
     Returns:
         The extracted text as a string.
     """
@@ -16,11 +14,7 @@ def perform_ocr(image, detection_results):
         ymin, xmin, ymax, xmax = detection_results['detection_boxes'][i]
         (left, right, top, bottom) = (xmin * image.shape[1], xmax * image.shape[1],
                                       ymin * image.shape[0], ymax * image.shape[0])
-
-        # Crop the image based on the bounding box
         cropped_image = image[int(top):int(bottom), int(left):int(right)]
-
-        # Perform OCR using Tesseract on the cropped image
-        extracted_text += pytesseract.image_to_string(cropped_image) + " "
-
+        config = '--psm 6 --oem 3'
+        extracted_text += pytesseract.image_to_string(cropped_image, config=config) + " "
     return extracted_text

@@ -60,4 +60,8 @@ def preprocess_image(image_file):
     receipt_contour = find_receipt_contour(image)
     if receipt_contour is not None:
         bw_result = wrap_perspective(bw_result, receipt_contour.reshape(4, 2))
+    # Additional Preprocessing Steps
+    bw_result = cv2.medianBlur(bw_result, 3)
+    bw_result = cv2.adaptiveThreshold(bw_result, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                                      cv2.THRESH_BINARY, 11, 2)
     return bw_result
