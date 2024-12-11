@@ -1,6 +1,6 @@
 # Insightku Model - Machine Learning
 
-1. Clone the repository
+Clone the repository
 ```
 git clone https://github.com/DirzyAdam/Insightku-FinancialApp.git
 ```
