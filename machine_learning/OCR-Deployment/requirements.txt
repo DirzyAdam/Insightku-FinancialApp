@@ -1,0 +1,9 @@
+opencv-python==4.10.0.84
+tesseract==0.1.3
+pytesseract==0.3.13
+flask==3.1.0
+mysql-connector-python==9.1.0
+tensorflow==2.18.0
+tensorflow-serving-api==2.18.0
+scikit-image==0.24.0
+numpy==1.26.4

@@ -1,6 +1,3 @@
-# Use a specific version of TensorFlow Serving
-FROM tensorflow/serving:2.11.0
-
 # Install dependencies for building Python
 RUN apt-get update && \
     apt-get install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev \

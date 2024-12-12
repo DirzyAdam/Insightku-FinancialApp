@@ -1,9 +1,0 @@
-opencv-python
-tesseract
-pytesseract
-flask
-mysql-connector-python
-tensorflow
-tensorflow-serving-api
-scikit-image
-numpy
