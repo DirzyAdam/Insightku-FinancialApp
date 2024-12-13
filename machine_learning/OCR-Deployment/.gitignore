@@ -1,4 +1,6 @@
 image-converter&test
-config.py
+#config.py
 request.json
 test_request.py
+example_usage.py
+test_ocr.py

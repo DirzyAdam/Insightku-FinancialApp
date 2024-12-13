@@ -1,5 +1,18 @@
 steps:
+# Step 1: Build the Docker image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/insightku-project-443512/receipt-detection:latest', '.']
+
+# Step 2: Push the Docker image to Google Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/insightku-project-443512/receipt-detection:latest']
+
+# Step 3: SSH into the existing VM and run the container
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      gcloud compute ssh ocr-vm --zone=asia-southeast2-a --command="docker pull gcr.io/insightku-project-443512/receipt-detection:latest && docker run -d -p 5000:5000 gcr.io/insightku-project-443512/receipt-detection:latest"
 images:
 - 'gcr.io/insightku-project-443512/receipt-detection:latest'

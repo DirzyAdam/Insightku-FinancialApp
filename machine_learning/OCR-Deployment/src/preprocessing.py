@@ -8,7 +8,9 @@ def bw_scanner(image):
     """
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     T = threshold_local(gray, 21, offset=5, method="gaussian")
-    return (gray > T).astype("uint8") * 255
+    bw = (gray > T).astype("uint8") * 255
+    print("BW Scanner output shape:", bw.shape)
+    return bw
 
 def wrap_perspective(img, rect):
     """
@@ -27,7 +29,9 @@ def wrap_perspective(img, rect):
         [maxWidth - 1, maxHeight - 1],
         [0, maxHeight - 1]], dtype="float32")
     M = cv2.getPerspectiveTransform(rect, dst)
-    return cv2.warpPerspective(img, M, (maxWidth, maxHeight))
+    warped = cv2.warpPerspective(img, M, (maxWidth, maxHeight))
+    print("Warped output shape:", warped.shape)
+    return warped
 
 def find_receipt_contour(image):
     """
@@ -36,17 +40,15 @@ def find_receipt_contour(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     edged = cv2.Canny(blurred, 75, 200)
-
     cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     cnts = cnts[0] if len(cnts) == 2 else cnts[1]
     cnts = sorted(cnts, key=cv2.contourArea, reverse=True)[:5]
-
     for c in cnts:
         peri = cv2.arcLength(c, True)
         approx = cv2.approxPolyDP(c, 0.02 * peri, True)
         if len(approx) == 4:
+            print("Found receipt contour:", approx)
             return approx
-
     return None
 
 def preprocess_image(image_file):
@@ -60,8 +62,25 @@ def preprocess_image(image_file):
     receipt_contour = find_receipt_contour(image)
     if receipt_contour is not None:
         bw_result = wrap_perspective(bw_result, receipt_contour.reshape(4, 2))
+    else:
+        print("No receipt contour found.")
+    
     # Additional Preprocessing Steps
     bw_result = cv2.medianBlur(bw_result, 3)
-    bw_result = cv2.adaptiveThreshold(bw_result, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                      cv2.THRESH_BINARY, 11, 2)
+    bw_result = cv2.adaptiveThreshold(bw_result, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
+    
+    # Resize and normalize the image
+    bw_result = cv2.resize(bw_result, (1280, 1280))  # Resize to match model input size
+    bw_result = bw_result / 255.0
+    print("Preprocessed image shape:", bw_result.shape)
+    
+    # Add a batch dimension and channel dimension
+    bw_result = np.expand_dims(bw_result, axis=0)
+    bw_result = np.expand_dims(bw_result, axis=-1)  # Adding channel dimension
+    print("Final preprocessed image shape with batch and channel dimensions:", bw_result.shape)
+    
+    # Convert to uint8 to avoid depth error
+    bw_result = (bw_result * 255).astype(np.uint8)
+    print("Final preprocessed image dtype:", bw_result.dtype)
+
     return bw_result
